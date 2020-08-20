@@ -7,3 +7,7 @@
 function checkAlive(health) {
   return health > 0;
 }
+
+// Solution 2
+
+const checkAlive = (health) => health > 0;
