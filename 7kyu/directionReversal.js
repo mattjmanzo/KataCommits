@@ -14,3 +14,21 @@ function solve(arr) {
 
   return steps;
 }
+
+// Solution 2
+
+function solve(arr) {
+  const reversed = arr.reverse();
+
+  return reversed.map((cur, ind, arr) => {
+    if (ind === 0) {
+      return cur.replace(/(Left|Right)/, "Begin");
+    }
+    if (arr[ind - 1].includes("Left")) {
+      return cur.replace(/(Left|Right|Begin)/, "Right");
+    }
+    if (arr[ind - 1].includes("Right")) {
+      return cur.replace(/(Left|Right|Begin)/, "Left");
+    }
+  });
+}
