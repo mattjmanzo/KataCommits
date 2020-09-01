@@ -9,3 +9,13 @@
 // Solution 1
 
 const baseFinder = (a) => Math.max(...a.join``) + 1;
+
+// Solution 2
+
+function baseFinder(seq) {
+  let base = 2;
+  for (let n of seq) {
+    for (let x of n) if (x > base) base = x;
+  }
+  return +base + 1;
+}
