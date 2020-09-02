@@ -14,3 +14,11 @@ function pluck(objs, name) {
     return o[name];
   });
 }
+
+// Solution 2
+
+function pluck(objs, name) {
+  return objs.map(function (obj) {
+    return obj[name];
+  });
+}
