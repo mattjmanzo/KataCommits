@@ -22,3 +22,7 @@ function pluck(objs, name) {
     return obj[name];
   });
 }
+
+// Solution 3
+
+const pluck = (objs, name) => objs.map((obj) => obj[name]);
