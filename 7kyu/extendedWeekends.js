@@ -25,3 +25,57 @@ function solve(a, b) {
     range.length,
   ];
 }
+
+// Solution 2
+
+const calendars = {
+  0: { months: 1, firstMonth: "Dec", lastMonth: "Dec" },
+  1: { months: 0 },
+  2: { months: 1, firstMonth: "Mar", lastMonth: "Mar" },
+  3: { months: 1, firstMonth: "Aug", lastMonth: "Aug" },
+  4: { months: 1, firstMonth: "May", lastMonth: "May" },
+  5: { months: 2, firstMonth: "Jan", lastMonth: "Oct" },
+  6: { months: 1, firstMonth: "Jul", lastMonth: "Jul" },
+  7: { months: 0 },
+  8: { months: 1, firstMonth: "Mar", lastMonth: "Mar" },
+  9: { months: 1, firstMonth: "Aug", lastMonth: "Aug" },
+  10: { months: 1, firstMonth: "May", lastMonth: "May" },
+  11: { months: 1, firstMonth: "Oct", lastMonth: "Oct" },
+  12: { months: 2, firstMonth: "Jan", lastMonth: "Jul" },
+  13: { months: 1, firstMonth: "Dec", lastMonth: "Dec" },
+};
+
+function Year(y) {
+  this.year = y;
+
+  this.isLeap = function () {
+    // A leap year is every 4 years, but not every 100 years, then again every 400 years.
+    return this.year % 4 == 0 && (this.year % 100 != 0 || this.year % 400 == 0);
+
+    // check if February has 29 days
+    //return new Date(this.year, 2, 0).getDate() == 29; // this is slightly slower
+  };
+
+  this.firstDay = function () {
+    return new Date(this.year, 0).getDay(); // 0-6 (Mon-Sun)
+  };
+
+  // Yes, true is 1 and false is 0 for javascript math.
+  this.calendar = calendars[this.firstDay() + this.isLeap() * 7];
+}
+
+function solve(a, b) {
+  const firstYear = new Year(a);
+  const lastYear = new Year(b);
+  const firstMonth = firstYear.calendar.months
+    ? firstYear.calendar.firstMonth
+    : new Year(a + 1).calendar.firstMonth;
+  const lastMonth = lastYear.calendar.months
+    ? lastYear.calendar.lastMonth
+    : new Year(b - 1).calendar.lastMonth;
+
+  let count = 0;
+  for (let i = a; i <= b; i++) count += new Year(i).calendar.months;
+
+  return [firstMonth, lastMonth, count];
+}
