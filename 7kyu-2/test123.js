@@ -5,3 +5,11 @@
 // Solution 1
 
 let number = (a) => a.map((v, i) => `${i + 1}: ${v}`);
+
+// Solution 2
+
+var number = function (array) {
+  return array.map(function (line, index) {
+    return index + 1 + ": " + line;
+  });
+};
