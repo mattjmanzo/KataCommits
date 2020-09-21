@@ -20,3 +20,18 @@ function peak(arr) {
   }
   return last == first && sum1 == sum2 ? last : -1;
 }
+
+// Solution 2
+
+function peak(arr) {
+  for (
+    var i = 0, l = 0, r = arr.reduce((a, b) => a + b, 0);
+    i < arr.length;
+    i++
+  ) {
+    r -= arr[i];
+    if (l == r) return i;
+    l += arr[i];
+  }
+  return -1;
+}
