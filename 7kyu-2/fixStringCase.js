@@ -19,3 +19,11 @@ function solve(s) {
   }
   return lowerC >= upperC ? s.toLowerCase() : s.toUpperCase();
 }
+
+// Solution 2
+
+function solve(s) {
+  let upper = s.split("").filter((x) => x === x.toUpperCase()).length;
+  let lower = s.length - upper;
+  return upper > lower ? s.toUpperCase() : s.toLowerCase();
+}
