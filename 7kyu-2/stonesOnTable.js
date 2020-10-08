@@ -13,3 +13,11 @@ function solve(stones) {
   }
   return counter;
 }
+
+// Solution 2
+
+function solve(stones) {
+  return stones.split("").reduce((totalRemove, stone, i) => {
+    return i >= 1 && stones[i - 1] === stone ? ++totalRemove : totalRemove;
+  }, 0);
+}
