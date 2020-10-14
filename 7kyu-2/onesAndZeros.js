@@ -7,3 +7,7 @@
 function binaryArrayToNumber(arr) {
     return arr.reduce( (a, b) => a << 1 | b );
   }
+
+// Solution 2 
+
+const binaryArrayToNumber = arr => parseInt(arr.join(''), 2);
