@@ -7,3 +7,7 @@
 function consecutive(arr, a, b) {
     return Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1  ? true : false;
   }
+
+// Solution 2 
+
+consecutive = (arr, a, b) => Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1;
