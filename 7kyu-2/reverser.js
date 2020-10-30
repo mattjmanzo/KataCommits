@@ -12,3 +12,22 @@ function reverse(n){
     }
     return rev;
 }
+
+// Solution 2 
+
+function reverse(n){
+    let number = 0;
+    if (n > 0){
+      let i = 10;
+      let count = 1;
+      let n1 = n % 10;
+      let n2 = n;
+      while(~~(n2/10) > 0){
+        n2 = ~~(n2 / 10);
+        count = count * 10;
+      }
+      
+      return (n % 10) * count + reverse(~~(n/10));
+    }
+    return number;
+  }
