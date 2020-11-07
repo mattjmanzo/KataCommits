@@ -14,3 +14,20 @@ function solve(a) {
     }
     return max;
   }
+
+
+// Solution 2 
+
+function solve(arr){
+  let array = arr[0];
+    for(let i=1; i < arr.length; i++){
+      let step = [];
+      let temp = []
+      for(let j of arr[i]){
+        step = array.map( e => e * j )
+        temp = temp.concat( step )
+      }
+      array = temp
+    }
+    return array.sort((a,b)=> b-a)[0]
+}
