@@ -7,3 +7,9 @@
 function solution(str, ending){
     return str.endsWith(ending);
   }
+
+// Solution 2 
+
+function solution(str, ending){
+  return new RegExp(ending+"$", "i").test(str);
+}
