@@ -14,3 +14,7 @@ function doubles(s) {
     }
     return cs.join('');
   }
+
+// Solution 2 
+
+doubles=d=s=>(x=s.replace(/(\w)\1/g,""))==s?s:d(x);
