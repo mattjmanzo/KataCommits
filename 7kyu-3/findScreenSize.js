@@ -9,3 +9,7 @@ function findScreenHeight(width, ratio) {
     const height = width / widthRatio * heightRatio
     return width + 'x' + height
   }
+
+  // Solution 2
+
+  findScreenHeight=(a,b,[c,d]=b.split`:`)=>`${a}x${a*d/c}`
