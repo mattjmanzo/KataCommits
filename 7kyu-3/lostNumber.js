@@ -11,3 +11,9 @@ function findDeletedNumber(arr, mixArr) {
         return arr[k];
     return 0;
   }
+
+// Solution 2 
+
+function findDeletedNumber(arr, mixArr) {
+  return arr.filter(v=>mixArr.indexOf(v)==-1)[0]||0
+}
