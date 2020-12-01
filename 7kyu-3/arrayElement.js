@@ -5,3 +5,7 @@
 // Solution 1 
 
 const solve=a=>a.find(e=>!a.includes(-e));
+
+// Solution 2 
+
+const solve = array => array.find(value => !array.includes(-value))
