@@ -5,3 +5,9 @@
 // Solution 1 
 
 const validSpacing=s=>s.replace(/\s+/g," ").trim()==s;
+
+// Solution 2 
+
+function validSpacing(s) {
+    return s.trim() == s && !s.includes("  ");
+  }
