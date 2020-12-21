@@ -7,3 +7,11 @@
 function cookingTime(eggs) {
     return 5 * Math.ceil(eggs / 8);
   }
+
+// Solution 2 
+
+function cookingTime(eggs) {
+  var maxEggs = 8;
+  var time = 5;
+  return Math.ceil( eggs / maxEggs ) * time;
+}
