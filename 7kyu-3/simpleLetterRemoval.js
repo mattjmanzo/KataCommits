@@ -14,3 +14,8 @@ function solve(s, k){
     
     return s
   }
+
+// Solution 2 
+
+const solve = (s, k) =>
+  [...s].sort().slice(0, k).reduce((pre, val) => pre.replace(val, ``), s);
