@@ -7,3 +7,7 @@
 function summy(s){
     return s.split` `.reduce((a,b)=>a+ +b,0)
   }
+
+// Solution 2 
+
+const summy = s => s.split(' ').map(Number).reduce((a,b)=>a+b,0)
