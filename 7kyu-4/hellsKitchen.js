@@ -13,4 +13,10 @@ function gordon(ramsay) {
       .toUpperCase()
       .replace(/\w+/g, '$&!!!!')
       .replace(/[AEIOU]/g, v => v == 'A' ? '@' : '*');
-  }
+  }  
+
+// Solution 2 
+
+const gordon = (str) => 
+                str.toUpperCase().replace(/A/g, x=>'@').replace(/[EOUI]/g, x=>'*')
+                .split(' ').map(el => el + '!!!!').join(' ')
