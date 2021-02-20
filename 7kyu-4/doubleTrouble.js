@@ -14,3 +14,15 @@ function trouble(x, t){
     
     return x;
   }
+
+// Solution 2 
+
+function trouble(x, t){
+  var newArray = [x[0]];
+  for (i = 1; i < x.length; i++) {
+    if (x[i] + newArray[newArray.length-1] != t) {
+      newArray.push(x[i])
+    } 
+  }
+  return newArray;
+}
