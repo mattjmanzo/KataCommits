@@ -5,3 +5,13 @@
 // Solution 1 
 
 const switcheroo=x=>x.replace(/[ab]/g,x=>x=="a"?"b":"a")
+
+// Solution 2 
+
+function switcheroo(x){
+    return x.split('').map(function(e){
+      if (e =='b')return 'a';
+      if (e == 'a') return 'b';
+      if(e=='c') return 'c'
+    }).join('');
+  }
