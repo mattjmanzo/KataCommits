@@ -13,3 +13,12 @@ function gcd(a, b) {
   function smallest(n) {
     return n == 1 ? 1 : lcm(n, smallest(n - 1));
   }
+
+// Solution 2 
+
+function smallest ( n ) {
+  function out(x, y){
+    return y === 0 ? x : out(y, x % y);
+  } 
+  return Array.from({length: n}, (_, i)=> i + 1).reduce((a, b) => (a * b) / out(a, b));
+}
